@@ -1,23 +1,24 @@
 {
   "name": "less-cache",
-  "version": "1.1.1",
-  "description": "Less compile cache",
+  "version": "1.1.2",
+  "description": "Less compile cache for Atom-ng.",
   "main": "./lib/less-cache",
   "scripts": {
-    "clean": "shx rm -rf lib",
+    "clean": "shx rm -rf lib && shx rm -rf node_modules",
+    "distclean": "shx rm -rf lib",
     "test": "jasmine-focused --captureExceptions --coffee spec",
-    "coffee": "npm run clean && shx cp -r src lib && coffee -c -M -o lib lib && shx rm -rf lib/*.coffee",
+    "coffee": "npm run distclean && shx cp -r src lib && coffee -c -M -o lib lib && shx rm -rf lib/*.coffee",
     "build": "npm run coffee",
     "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/less-cache.git"
+    "url": "https://github.com/Alex313031/less-cache-ng.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/less-cache/issues"
+    "url": "https://github.com/Alex313031/less-cache-ng/issues"
   },
-  "homepage": "http://atom.github.io/less-cache",
+  "homepage": "https://github.com/Alex313031/less-cache-ng",
   "keywords": [
     "less",
     "less.js",
@@ -26,22 +27,22 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/atom/less-cache/raw/master/LICENSE.md"
+      "url": "https://github.com/Alex313031/less-cache-ng/raw/master/LICENSE.md"
     }
   ],
   "dependencies": {
     "fs-plus": "^3.1.1",
-    "less": "^3.12.2",
+    "less": "^2.7.3",
     "underscore-plus": "^1.7.0",
     "walkdir": "^0.4.1"
   },
   "devDependencies": {
     "coffeescript": "^1.12.7",
     "fstream": "^1.0.12",
-    "jasmine-focused": "^1",
-    "temp": "^0.9.4",
+    "jasmine-focused": "^1.0.7",
+    "temp": "0.9.4",
     "tmp": "0.2.1",
-    "shx": "^0.3.3",
+    "shx": "^0.3.4",
     "cross-env": "^7.0.3"
   }
 }
