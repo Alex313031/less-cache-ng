@@ -1,6 +1,6 @@
 {
   "name": "less-cache",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Less compile cache for Atom-ng.",
   "main": "./lib/less-cache",
   "scripts": {
@@ -8,8 +8,7 @@
     "distclean": "shx rm -rf lib",
     "test": "jasmine-focused --captureExceptions --coffee spec",
     "coffee": "npm run distclean && shx cp -r src lib && coffee -c -M -o lib lib && shx rm -rf lib/*.coffee",
-    "build": "npm run coffee",
-    "prepare": "npm run build"
+    "build": "npm run coffee"
   },
   "repository": {
     "type": "git",
